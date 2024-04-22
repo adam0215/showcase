@@ -1,0 +1,4 @@
+.DS_Store
+./arl/target
+./pattern_parser/.elixir_ls
+./pattern_parser/_build

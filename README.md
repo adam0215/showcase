@@ -15,6 +15,8 @@ Här är ett litet urval av vad jag gjort. Mycket av det jag gör på min fritid
 
 Inspirerad av "stack-oriented programming" och använder sig av "omvänd polsk notation" för att ta hänsyn till prioriteringsregler. Har en inbyggd funktion för att räkna ut medelvärde bl.a. Mattetal kan se triviala ut på ytan – och de är nog det till stor del beroende på vem du frågar – men man måste ändå ta hänsyn till prioriteringsregler och liknande vilket gör det mer utmanande. För att ta hänsyn till dessa tog jag bland annat "omvänd polsk notation" till hjälp. Detta projekt skrev jag när jag var relativt ny till Rust.
 
+![ARL Exempelkommandon](arl_example.gif)
+
 **Mål med projektet**
 
 - Lära mig mer om lexing och parsing och hur dessa kan implementeras
@@ -42,6 +44,8 @@ Statiska promptar är helt enkelt en statisk text. Dessa kunde man tagga med nyc
 ### Phaseshift: "Server-only" Interaktiva gränssnitt
 
 Inspirerad av Liveview från Phoenix-ramverket i Elixir ville jag testa att implementera något liknande själv. Det vill säga ett webbramverk som hade stöd för realtidsuppdateringar i gränssnittet, men lagrade hela applikationens tillstånd på servern. Detta implementerade jag m.h.a. Websockets. Jag implementerade även inkrementella uppdateringar av HTML:en vilket innebär att servern bara uppdaterar den del av HTML:en på klienten som är interaktiv och behöver uppdateras, istället för hela sidan. Klienten kan även köra funktioner på servern. Detta projektet är ett ytterst simpelt proof-of-concept som endast har stöd för uppdatering av text i HTML:en för tillfället.
+
+![Exempelraknare](phaseshift_example.gif)
 
 **Mål med projektet**
 
@@ -71,7 +75,7 @@ För att fräscha upp Go-kunskaperna och lära mig mer om TUI-applikationer skre
 - Lära mig mer om biblioteket Bubbletea
 - Fräscha upp Go-kunskaperna
 
-### Pattern-Parser: Jämför en textsträng med ett förbestämt format
+### Pattern-Parser: Jämför en textsträng med ett förutbestämt format
 
 Programmeringsspråk intresserar mig väldigt mycket, jag tycker olika språk är spännande. Funktionella språk hade länge fångat mitt intresse, men jag hade aldrig provat ett "rent" funktionellt språk. Jag tyckte om Rusts funktionella delar och ville därför utforska mer. Så jag bestämde mig för att testa Elixir. Ett funktionellt språk utan loopar gav mig också ett ypperligt tillfället att bli bättre på rekursion. Mitt första och enda projekt i Elixir är Pattern-Parser vilket är ett bibliotek för att jämföra en sträng mot ett förutbestämt format och läsa ut värdena från användarens input.
 
