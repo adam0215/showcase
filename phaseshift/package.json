@@ -1,0 +1,23 @@
+{
+  "name": "phaseshift",
+  "module": "phaseshift/index.ts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "dev": "bun run phaseshift/index.ts",
+    "hotdev": "bun --hot run phaseshift/index.ts"
+  },
+  "type": "module",
+  "dependencies": {
+    "@elysiajs/html": "^1.0.0",
+    "@elysiajs/static": "^1.0.0",
+    "ejs": "^3.1.9",
+    "elysia": "^1.0.0",
+    "jsdom": "^24.0.0",
+    "nanoid": "^5.0.6"
+  }
+}

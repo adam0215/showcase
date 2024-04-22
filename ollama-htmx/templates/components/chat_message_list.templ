@@ -1,0 +1,13 @@
+package components
+
+import "ollama-htmx/llm"
+
+templ ChatMessageList(messages []llm.ChatMessage) {
+	for i, msg := range messages {
+		<li class="w-full">
+			if msg.Content != "" {
+				@ChatMessage(msg, i == 0)
+			}
+		</li>
+	}
+}

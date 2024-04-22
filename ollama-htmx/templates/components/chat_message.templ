@@ -1,0 +1,16 @@
+package components
+
+import "ollama-htmx/llm"
+
+const userColor = "bg-amber-400"
+const assistantColor = "bg-violet-400"
+
+templ ChatMessage(msg llm.ChatMessage, borderTop bool) {
+	<div class={ "flex flex-col w-full gap-2 py-8 border-t-[1px] border-t-slate-300", templ.KV("border-t-[1px] border-t-slate-300", borderTop) }>
+		<p>{ msg.Content }</p>
+		<span class="flex items-center gap-1">
+			<span class={ templ.KV(userColor, msg.Author == "user"), templ.KV(assistantColor, msg.Author == "assistant"), "w-[1ch] h-[1ch] rounded-full" }></span>
+			<span class="text-slate-400 font-medium text-sm uppercase">{ msg.Author }</span>
+		</span>
+	</div>
+}

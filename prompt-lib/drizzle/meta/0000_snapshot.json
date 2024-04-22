@@ -1,0 +1,220 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "id": "a5b7fa36-11ee-41db-aba5-780be63b6b3f",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "tables": {
+    "dynamic_prompt_tags": {
+      "name": "dynamic_prompt_tags",
+      "columns": {
+        "prompt_id": {
+          "name": "prompt_id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tag_id": {
+          "name": "tag_id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "dynamic_prompt_tags_prompt_id_dynamic_prompts_id_fk": {
+          "name": "dynamic_prompt_tags_prompt_id_dynamic_prompts_id_fk",
+          "tableFrom": "dynamic_prompt_tags",
+          "tableTo": "dynamic_prompts",
+          "columnsFrom": [
+            "prompt_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "dynamic_prompt_tags_tag_id_tags_id_fk": {
+          "name": "dynamic_prompt_tags_tag_id_tags_id_fk",
+          "tableFrom": "dynamic_prompt_tags",
+          "tableTo": "tags",
+          "columnsFrom": [
+            "tag_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "dynamic_prompt_tags_prompt_id_tag_id": {
+          "name": "dynamic_prompt_tags_prompt_id_tag_id",
+          "columns": [
+            "prompt_id",
+            "tag_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "dynamic_prompts": {
+      "name": "dynamic_prompts",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "prompt": {
+          "name": "prompt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tokens": {
+          "name": "tokens",
+          "type": "json",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "static_prompt_tags": {
+      "name": "static_prompt_tags",
+      "columns": {
+        "prompt_id": {
+          "name": "prompt_id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tag_id": {
+          "name": "tag_id",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "static_prompt_tags_prompt_id_static_prompts_id_fk": {
+          "name": "static_prompt_tags_prompt_id_static_prompts_id_fk",
+          "tableFrom": "static_prompt_tags",
+          "tableTo": "static_prompts",
+          "columnsFrom": [
+            "prompt_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "static_prompt_tags_tag_id_tags_id_fk": {
+          "name": "static_prompt_tags_tag_id_tags_id_fk",
+          "tableFrom": "static_prompt_tags",
+          "tableTo": "tags",
+          "columnsFrom": [
+            "tag_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {
+        "static_prompt_tags_prompt_id_tag_id": {
+          "name": "static_prompt_tags_prompt_id_tag_id",
+          "columns": [
+            "prompt_id",
+            "tag_id"
+          ]
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "static_prompts": {
+      "name": "static_prompts",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "title": {
+          "name": "title",
+          "type": "varchar(256)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "prompt": {
+          "name": "prompt",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
+    "tags": {
+      "name": "tags",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "text": {
+          "name": "text",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
