@@ -43,7 +43,7 @@ Statiska promptar är helt enkelt en statisk text. Dessa kan man tagga med nycke
 
 ### Phaseshift: "Server-only" Interaktiva gränssnitt
 
-Inspirerad av Liveview från Phoenix-ramverket i Elixir ville jag testa att implementera något liknande själv. Det vill säga ett webbramverk som hade stöd för realtidsuppdateringar i gränssnittet, men lagrade hela applikationens tillstånd på servern. Detta implementerade jag m.h.a. Websockets. Jag implementerade även inkrementella uppdateringar av HTML:en vilket innebär att servern bara uppdaterar den del av HTML:en på klienten som är interaktiv och behöver uppdateras, istället för hela sidan. Klienten kan även köra funktioner på servern. Detta projektet är ett ytterst simpelt proof-of-concept som endast har stöd för uppdatering av text i HTML:en för tillfället.
+Inspirerad av Liveview från Phoenix-ramverket i Elixir ville jag testa att implementera något liknande själv. Det vill säga ett webbramverk som har stöd för realtidsuppdateringar i gränssnittet, men lagrar hela applikationens tillstånd på servern. Detta implementerade jag m.h.a. Websockets. Jag implementerade även inkrementella uppdateringar av HTML:en vilket innebär att servern bara uppdaterar den del av HTML:en på klienten som är interaktiv och behöver uppdateras, istället för hela sidan. Klienten kan även köra funktioner på servern. Detta projektet är ett ytterst simpelt proof-of-concept som endast har stöd för uppdatering av text i HTML:en för tillfället.
 
 ![Exempelraknare](phaseshift_example.gif)
 
