@@ -1,6 +1,6 @@
 # **Halloj** 👋
 
-Här är ett litet urval av vad jag gjort. Mycket av det jag gör på min fritid handlar om att lära mig nya saker och att bibehålla flexibilitet och en bred kunskap. Därför är mycket av det jag gör mindre experiment. Jag har försökt ge korta beskrivningar av projekten och målen med dem för att göra syftet med dem tydligare. Projekten är ett urval av lite webb och lite system. Projekten är skrivna under väldigt olika perioder och jag kan garantera att jag utvecklats en hel del sedan många av dem skrevs.
+Här är ett litet urval av vad jag gjort. Mycket av det jag gör på min fritid handlar om att lära mig nya saker och att bibehålla flexibilitet och en bred kunskap. Därför är mycket av det jag gör mindre experiment. Jag har försökt ge korta beskrivningar av projekten och målen med dem för att göra syftet med dem tydligare. Projekten är ett urval av lite webb och lite system. De är skrivna under väldigt olika perioder och jag kan garantera att jag utvecklats en hel del sedan många av dem skrevs.
 
 ### [Cryptopals-utmaningar i Rust](https://github.com/adam0215/rs-cryptopals)
 
