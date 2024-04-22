@@ -100,3 +100,12 @@ Programmet använder inga loopar, endast rekursion och har stöd för textsträn
 
 - Testa ett "rent" funktionellt programmeringsspråk
 - Träna på rekursion
+
+### Blogg från kursen "Webbutveckling II - Skriptspråk och databaser"
+
+Jag skrev en blogg i PHP 5 i kursen D0019E Webbutveckling II - Skriptspråk och databaser på LTU. Den har sina många brister men innehåller också ett par fyndiga funktioner. Förutom att man kan skapa konton, ladda upp och administrera sina inlägg kan man även se estimerad lästid, och reagera med fyra olika reaktionsemojis på andra inlägg till exempel. Två funktioner som inte stod med i uppgiftsbeskrivningen. Annan funktionalitet inkluderar att sidan kommer ihåg var du var när du tryckte på logga in för att sedan ta dig tillbaka till sidan du kom ifrån. Backenden känner även igen om användaren laddar upp exakt samma bild som redan finns på servern genom MD5-checksummor och återanvänder då bilden som redan finns för att motverka dubletter.
+
+**Mål med projektet**
+
+- Lära mig PHP
+- Göra det roligaste av uppgiften
