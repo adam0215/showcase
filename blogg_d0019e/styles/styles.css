@@ -1,0 +1,1466 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+:root {
+	font-family: 'Inter', sans-serif;
+	font-size: 16px;
+	color: var(--primary-black);
+	height: 100%;
+	scroll-behavior: smooth;
+
+	--primary-black: #1d1d1d;
+	--on-primary-black: white;
+	--primary-variant: #333;
+
+	--surface-grey-50: #f9f9fc;
+	--surface-grey-100: #f1f1f8;
+	--surface-grey-200: #d9d9df;
+	--surface-grey-300: #c1c1c6;
+	--surface-grey-400: #a9a9ae;
+	--surface-grey-500: #919195;
+	--surface-grey-600: #79797c;
+
+	--layer-grey-50: #f0f0f3;
+	--layer-grey-100: #e2e2e6;
+	--layer-grey-200: #c4c4cd;
+	--layer-grey-300: #a7a7b4;
+	--layer-grey-400: #89899b;
+	--layer-grey-500: #6c6c82;
+	--layer-grey-600: #565668;
+
+	--semantic-red: rgb(216, 48, 96);
+	--semantic-red-bg: rgb(255, 241, 245);
+	--on-semantic-red-bg: rgb(212, 109, 138);
+	--accent-blue: rgb(101, 150, 255);
+
+	--para-text-size: 1.25rem;
+
+	--p2-border: 2px solid var(--surface-grey-100);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	min-height: 100%;
+	z-index: 0;
+}
+header {
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+footer {
+	width: 100%;
+	margin-top: 2rem;
+}
+
+h1 {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+h2 {
+	font-size: 1.75rem;
+	margin-bottom: 1.5rem;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+/* NAVIGATIONSBAR - HEADER OCH FOOTER  */
+
+.main-nav {
+	display: flex;
+	width: 100%;
+	padding: 2rem 4rem;
+}
+
+header > .main-nav {
+	border-bottom: var(--p2-border);
+}
+
+footer > .main-nav {
+	border-top: var(--p2-border);
+}
+
+/* Alla barn till main-nav och alla barn till alla barn därunder */
+.main-nav > *,
+.main-nav > * > * {
+	display: flex;
+	align-items: center;
+}
+
+.main-nav ul {
+	width: 100%;
+	justify-content: space-between;
+	list-style: none;
+}
+
+.main-nav ul > .list-item-container {
+	gap: 3rem;
+}
+
+.nav-logo {
+	font-family: 'Russo One', sans-serif;
+	font-size: 2rem;
+}
+
+/* HÅLL ALLTID MITTEN DIV:EN CENTRERAD I FOOTER */
+
+footer div {
+	flex: 1;
+}
+
+footer #footer-author-date {
+	justify-content: center;
+}
+
+footer div:first-of-type {
+	margin-left: auto;
+}
+
+footer div:last-of-type {
+	margin-right: auto;
+	justify-content: flex-end;
+}
+
+/* CENTRERAD MITTEN DIV --- */
+
+/* --- */
+
+/* MAIN & LAYOUT */
+
+.main-container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.hero-section,
+.auth-col-2 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 2rem 4rem;
+}
+
+.auth-col-2 > .col,
+.hero-section > .col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	height: 100%;
+	min-height: 100vh; /* KOM TILLBAKA HIT ADAM, DETTA KANSKE INTE ÄR OPTIMALT */
+	border-radius: 1.5rem;
+}
+
+.auth-col-2 > .col {
+	padding: 2rem;
+}
+
+.auth-col-2 > .col:first-of-type {
+	background-color: var(--surface-grey-50);
+	color: var(--primary-black);
+}
+
+.auth-col-2 .col p {
+	text-align: center;
+	max-width: 32rem;
+}
+
+/* ADMIN */
+
+.admin-main {
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 2rem;
+	padding: 2rem;
+}
+
+.admin-center-area {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 4rem;
+	width: 100%;
+	min-height: 100vh;
+	padding: 2rem;
+}
+
+.admin-sidebar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	max-width: 20rem;
+	min-height: 100vh;
+	padding: 2rem;
+	border-radius: 1.5rem;
+	background-color: var(--surface-grey-50);
+}
+
+.admin-sidebar .admin-profile-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	text-align: center;
+}
+
+.admin-sidebar .admin-profile-info .profile-pic {
+	border: 2px solid var(--primary-black);
+	width: 60%;
+}
+
+.admin-sidebar .admin-bio-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 0.5rem;
+}
+
+.admin-sidebar .admin-bio-container div.bio-character-counter-container {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.admin-sidebar .admin-bio-container span {
+	color: var(--layer-grey-500);
+}
+
+.admin-sidebar textarea {
+	height: 12rem;
+	padding: 1rem;
+	color: var(--primary-black);
+	font-size: 1rem;
+	font-family: inherit;
+	border-radius: 1rem;
+	border: 2px solid var(--primary-black);
+	background-color: white;
+}
+
+.admin-sidebar textarea::placeholder {
+	color: var(--layer-grey-500);
+}
+
+.admin-post-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.admin-post-list {
+	border-top: var(--p2-border);
+	padding-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+}
+
+.admin-post-list .post-list-item {
+	max-height: 10rem;
+}
+
+.admin-post-list .post-list-item img {
+	max-height: 6rem;
+}
+
+.post-list-item-controls {
+	display: flex;
+	height: max-content;
+	gap: 1rem;
+}
+
+.post-list-item-controls > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.5rem;
+}
+
+.post-list-item-controls button,
+.post-list-item-controls a {
+	padding: 0.5rem;
+}
+
+.post-list-item-controls svg {
+	height: 1.5rem;
+}
+
+.post-list-item-controls .remove-post-btn:hover {
+	background-color: var(--semantic-red);
+}
+
+/* -- ADMIN */
+
+/* DIALOG */
+.dialog-container {
+	width: 24rem;
+	padding: 1rem;
+
+	left: calc(50% - 24rem / 2);
+	top: 30%;
+
+	border: 2px solid var(--layer-grey-100);
+	border-radius: 1rem;
+}
+
+.dialog-container[open] {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 2rem;
+}
+
+.dialog-container::backdrop {
+	backdrop-filter: blur(3px);
+	background-color: rgba(230, 230, 230, 0.6);
+}
+
+.dialog-container form {
+	width: 100%;
+}
+
+.dialog-container > div:first-of-type {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 0.5rem;
+	width: 100%;
+}
+
+.dialog-container > form div {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+/* --- DIALOG */
+
+/* SIDOMEDDELANDE */
+
+.page-message {
+	position: fixed;
+	top: 6rem;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 32rem;
+	padding: 1rem;
+
+	color: white;
+	background-color: var(--primary-black);
+	border-radius: 0.75rem;
+}
+
+.page-message.styled-message {
+	background: linear-gradient(
+		155deg,
+		rgba(192, 0, 255, 1),
+		rgba(255, 143, 143, 1)
+	);
+}
+
+/* --- */
+
+/* HERO */
+
+.hero-section {
+	padding-block: 7rem;
+	gap: 6rem;
+}
+
+.hero-section h1 {
+	font-size: 3rem;
+}
+
+.hero-section .col {
+	width: unset;
+	align-items: flex-start;
+	gap: 2rem;
+	justify-content: flex-start;
+	background-color: unset;
+}
+
+.hero-button-container {
+	display: flex;
+	gap: 2rem;
+}
+
+.hero-article {
+	position: relative;
+	width: 32rem;
+	height: 24rem;
+	border-radius: 1.5rem;
+	overflow: hidden;
+}
+
+.hero-article::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 1;
+	width: 100%;
+	height: 50%;
+	background-image: linear-gradient(transparent, black);
+
+	/* Stäng av så att den inte tar emot/stör några klickningar */
+	pointer-events: none;
+}
+
+.hero-article img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.hero-article-info {
+	display: flex;
+	gap: 1.5rem;
+	position: absolute;
+	width: 100%;
+	justify-content: space-between;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	color: white;
+	padding: 1.5rem;
+}
+.hero-article-info h3 {
+	font-weight: 600;
+}
+
+.hero-article-info p {
+	color: var(--surface-grey-50);
+}
+
+.hero-article-info .date-container,
+.hero-article-info div {
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+/* RUBRIK & INFO */
+.hero-article-info div {
+	gap: 0.5rem;
+}
+
+.hero-article-info .date-container {
+	gap: 0.25rem;
+	align-items: flex-end;
+}
+
+.hero-article-info .date-container > * {
+	width: max-content;
+}
+
+/* DATUM */
+
+.hero-article-info .date-container > time:first-of-type {
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+/* --- */
+
+/* SEKTIONER */
+
+.start-section {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	width: 100%;
+	padding: 7rem 4rem;
+	background-color: white;
+}
+
+.start-section h2 {
+	font-size: 2.5rem;
+	margin-bottom: 0rem;
+}
+
+.our-authors-section {
+	align-items: center;
+	border-top: var(--p2-border);
+}
+
+.our-authors-section > div {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	gap: 2rem;
+	flex-wrap: wrap;
+	/* Skapa ny "stacking context" för att kunna åstadkomma kanten på "newest-author-card" */
+	position: relative;
+	z-index: 1;
+}
+
+.our-authors-section .md-user-card-container {
+	width: 100%;
+	max-width: 14rem;
+}
+
+.all-authors {
+	border-top: none;
+}
+
+.more-from-section {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding-block: 2rem;
+	border-top: var(--p2-border);
+}
+
+/* --- SEKTIONER */
+
+.post-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 100%;
+	max-width: 60rem;
+}
+
+.post-list-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 4rem;
+	max-height: 12rem;
+	width: 100%;
+	padding: 1rem;
+	border-radius: 1.5rem;
+	border: var(--p2-border);
+}
+
+.post-list-item div:first-of-type {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.post-list-item div:last-of-type {
+	flex-shrink: 0;
+	aspect-ratio: 1/1;
+	overflow: hidden;
+	border-radius: 1rem;
+}
+
+.post-list-item span {
+	color: var(--layer-grey-500);
+}
+
+.post-list-item h3,
+p {
+	max-width: 70ch;
+}
+
+.post-list-item p {
+	/* Trunkera överflödande text */
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.post-list-item img {
+	width: auto;
+	height: 100%;
+	aspect-ratio: 1/1;
+	max-height: 10rem;
+	object-fit: cover;
+}
+
+/* KORT */
+
+.card-container {
+	display: flex;
+	background-color: white;
+	border: var(--p2-border);
+	padding: 1rem;
+	transition: border-color, 350ms ease-in-out,
+		background-color 300ms ease-in-out;
+}
+
+.card-container.card-hover:hover {
+	border-color: var(--layer-grey-500);
+	background-color: var(--surface-grey-50);
+	cursor: pointer;
+}
+/* --- KORT */
+
+/* MEDIUM ANVÄNDARKORT */
+
+.md-user-card-container {
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	border-radius: 0.5rem;
+	text-align: center;
+}
+
+.md-user-card-container .md-user-card-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.md-user-card-container img {
+	width: 5rem;
+	aspect-ratio: 1/1;
+}
+
+.md-user-card-container h5 {
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.md-user-card-container span {
+	color: var(--layer-grey-500);
+	font-size: 1rem;
+}
+
+.md-user-card-container svg {
+	width: 2rem;
+}
+/* --- */
+
+/* SMALL USER CARD / LITET ANVÄNDARKORT */
+
+.sm-user-card-container,
+.nav-user-menu {
+	align-items: center;
+	gap: 1rem;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+
+.sm-user-card-container .sm-user-card-info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.sm-user-card-container h6 {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.sm-user-card-container span {
+	color: var(--layer-grey-500);
+	font-size: 0.875rem;
+}
+
+.sm-user-card-container svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.sm-card-divider {
+	width: 2px;
+	height: 2rem;
+	background-color: var(--surface-grey-50);
+
+	transition: background-color, 350ms ease-in-out;
+}
+
+.sm-user-card-container.card-hover:hover .sm-card-divider {
+	background-color: var(--layer-grey-500);
+}
+
+/* --- */
+
+/* SPECIELL KORT STYLING */
+
+/* Skapa ett property för att CSS ska förstå att vinkeln på gradienten ska gå att animera.
+	Property:t gör så att CSS förstår att angle är ett numeriskt värde snarare än en textströng, 
+	vilket inte går att annimera  
+*/
+@property --angle {
+	syntax: '<angle>';
+	initial-value: 135deg;
+	inherits: false;
+}
+
+.newest-author-card {
+	position: relative;
+	border: none;
+}
+
+@keyframes rotate-gradient {
+	0% {
+		--angle: 0deg;
+	}
+	100% {
+		--angle: 360deg;
+	}
+}
+
+.newest-author-card::before {
+	content: 'Senaste';
+	font-size: 0.875rem;
+	font-weight: 600;
+	position: absolute;
+	top: -1rem;
+	right: -1rem;
+	box-shadow: 0.25rem 0.25rem 1.75rem #31313f30;
+	width: max-content;
+	height: max-content;
+	padding: 0.25rem 0.5rem;
+	border-radius: 1rem;
+	color: white;
+	background-color: var(--primary-black);
+}
+
+.newest-author-card::after {
+	--newest-auth-border-thickness: 0.5rem;
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: calc(var(--newest-auth-border-thickness) / -2);
+	width: calc(100% + var(--newest-auth-border-thickness));
+	height: calc(100% + var(--newest-auth-border-thickness));
+
+	background: linear-gradient(
+		var(--angle),
+		rgba(192, 0, 255, 1),
+		rgba(255, 143, 143, 1)
+	);
+	/* Högre än "md-user-card" för att kompensera för den ökade storleken och matcha "md-user-card" */
+	border-radius: 0.75rem;
+	animation: rotate-gradient 5s linear infinite;
+}
+
+/* Firefox har inte stöd för @property än, så lägg till gradienten som statisk där */
+@-moz-document url-prefix() {
+	.newest-author-card::after {
+		background: linear-gradient(
+			135deg,
+			rgba(192, 0, 255, 1),
+			rgba(255, 143, 143, 1)
+		);
+	}
+}
+/* --- SPECIAL CARD STYLING */
+
+/* PROFIL */
+.creator-profile-info-container {
+	display: flex;
+	gap: 2rem;
+	justify-content: flex-start;
+	align-items: center;
+
+	width: 100%;
+	max-width: 60rem;
+	height: 12rem;
+
+	margin-bottom: 4rem;
+}
+
+.creator-profile-info-container div {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.creator-profile-info-container h1 {
+	margin-bottom: 0;
+}
+
+.creator-profile-info-container span {
+	color: var(--layer-grey-500);
+}
+
+.creator-profile-info-container div > div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.creator-profile-info-container .profile-pic {
+	width: auto;
+	height: auto;
+	max-height: 100%;
+}
+/* --- PROFIL */
+
+/* MENY UNDER ANVÄNDARKORTET I NAVBAR */
+
+#nav-user-card {
+	position: relative;
+	z-index: 10;
+}
+
+.nav-user-menu {
+	position: absolute;
+	z-index: 5;
+	flex-direction: column;
+	width: 100%;
+	top: calc(100% + 0.5rem);
+}
+
+.nav-user-menu ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.nav-user-menu form {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.user-card-btn-container {
+	display: flex;
+	gap: 4rem;
+	align-items: center;
+}
+
+/* NAV-MENY --- */
+
+/* REAKTIONER */
+
+.reaction-container {
+	display: flex;
+	gap: 1rem;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+}
+
+.reaction-container.reacted {
+	border-color: rgba(192, 0, 255, 1);
+	background-color: rgba(192, 0, 255, 0.1);
+}
+
+.reaction-container span:first-of-type {
+	font-size: 1rem;
+	font-weight: 600;
+	padding: 0.5rem;
+}
+
+/* --- REAKTIONER */
+
+/* KNAPPAR */
+
+.primary-btn,
+.secondary-btn,
+.teritary-btn {
+	display: flex;
+	gap: 0.5rem;
+	justify-content: space-evenly;
+	align-items: center;
+	font-family: inherit;
+	border: none;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.primary-btn svg,
+.secondary-btn svg,
+.teritary-btn svg {
+	height: 1.5em;
+}
+
+.primary-btn,
+.secondary-btn {
+	padding: 1rem 2rem;
+	border-radius: 0.75rem;
+
+	transition: all 200ms ease-in-out;
+}
+
+.primary-btn {
+	color: var(--on-primary-black);
+	background-color: var(--primary-black);
+}
+
+.primary-btn:hover {
+	background-color: var(--primary-variant);
+}
+
+.secondary-btn {
+	color: var(--primary-black);
+	background-color: var(--surface-grey-50);
+}
+
+.secondary-btn:hover {
+	background-color: var(--layer-grey-100);
+}
+
+.invisible-link {
+	display: contents;
+	/* Inkluderas också, och ska inkluderas vid effekter på 
+	A-taggar där dessa inte ska påverkas, exempelvis hover-understrecket 
+	för text-länkar */
+}
+
+a,
+.teritary-btn {
+	color: var(--primary-black);
+	text-decoration: none;
+	position: relative;
+}
+
+/* Välj alla A-element förutom dem som har en klass som slutar med "btn" eller "logo" */
+a:not([class$='btn'], [class$='logo'], .invisible-link)::after,
+.teritary-btn::after {
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 1.5px;
+	bottom: -3px;
+	left: 0;
+	opacity: 0%;
+	background-color: var(--primary-black);
+
+	transition: all 200ms ease-in-out;
+}
+
+a:hover::after,
+.teritary-btn:hover::after {
+	width: 100%;
+	opacity: 100%;
+}
+
+.teritary-btn {
+	width: fit-content;
+	padding: 0;
+	background-color: transparent;
+}
+
+.icon-btn {
+	display: grid;
+	place-items: center;
+	padding: 1rem;
+	aspect-ratio: 1/1;
+
+	width: max-content;
+	height: max-content;
+
+	cursor: pointer;
+}
+
+.floating-btn {
+	box-shadow: 0.25rem 0.25rem 1.75rem #31313f30;
+}
+
+.expanding-btn {
+	width: 3.5rem;
+	height: 3.5rem;
+
+	transition: all 375ms ease-in-out;
+}
+
+.expanding-btn svg {
+	position: absolute;
+	right: 1.2rem;
+
+	transition: all 375ms ease-in-out;
+}
+
+.expanding-btn span {
+	opacity: 0;
+	position: absolute;
+	left: 1.2rem;
+	white-space: nowrap;
+	transition: all 250ms ease-in-out;
+}
+
+.expanding-btn:hover span {
+	opacity: 1;
+}
+
+@keyframes wiggle {
+	0% {
+		transform: rotate(0);
+	}
+	20% {
+		transform: rotate(10deg);
+	}
+	40% {
+		transform: rotate(-10deg);
+	}
+	60% {
+		transform: rotate(10deg);
+	}
+	80% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(0);
+	}
+}
+
+.expanding-btn:hover svg {
+	/* SNURRA IKON */
+	animation: wiggle 0.75s cubic-bezier(0.455, 0.03, 0.515, 0.955) 2;
+	animation-delay: 0.4s;
+}
+
+.expanding-btn:hover {
+	width: 10rem;
+}
+
+/* Ställen där knapparna bör fylla hella bredden av en container. Främst formulär */
+.form-button-container button,
+.form-button-container input[type='submit'],
+.form-button-container input[type='button'] {
+	width: 100%;
+}
+
+/* --- */
+
+/* FORMULÄR */
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+
+	width: 24rem;
+	padding: 2rem;
+}
+
+.form-input-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 1rem;
+}
+
+.label-input-container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+
+	width: 100%;
+}
+
+.label-input-container input {
+	width: 100%;
+	padding: 0.75rem;
+	font-size: 1rem;
+
+	background-color: var(--surface-grey-50);
+	border: none;
+	border-radius: 0.75rem;
+}
+
+.label-input-container input::placeholder {
+	color: var(--layer-grey-500);
+}
+
+.label-input-container input:focus-visible {
+	color: var(--primary-black);
+	background-color: var(--surface-grey-50);
+	outline-color: var(--primary-black);
+}
+
+.label-input-container input:focus-visible::placeholder {
+	color: var(--layer-grey-500);
+}
+
+.label-input-container:has(span.input-error-msg) > input {
+	border: 1.5px solid var(--semantic-red);
+	background-color: var(--semantic-red-bg);
+}
+
+.label-input-container:has(span.input-error-msg) > input::placeholder {
+	color: var(--on-semantic-red-bg);
+}
+
+.label-input-container:has(span.input-error-msg) > input:focus-visible {
+	color: var(--primary-black);
+	background-color: var(--surface-grey-50);
+}
+
+.label-input-container:has(span.input-error-msg)
+	> input:focus-visible::placeholder {
+	color: var(--layer-grey-500);
+}
+
+/* Firefox stödjer in "has()". Därför krävs särskilda selektorer för att ge 
+samma resultat som de som använder has()-selektorn för just Firefox. */
+@-moz-document url-prefix() {
+	.label-input-container > input:not(:last-child) {
+		border: 1.5px solid var(--semantic-red);
+		background-color: var(--semantic-red-bg);
+	}
+
+	.label-input-container > input:not(:last-child)::placeholder {
+		color: var(--on-semantic-red-bg);
+	}
+
+	.label-input-container > input:not(:last-child):focus-visible {
+		color: var(--primary-black);
+		background-color: var(--surface-grey-50);
+	}
+
+	.label-input-container > input:not(:last-child):focus-visible::placeholder {
+		color: var(--layer-grey-500);
+	}
+}
+
+.alerting-text {
+	color: var(--semantic-red) !important;
+}
+
+.input-error-msg {
+	font-weight: 500;
+	font-size: 0.75rem;
+}
+
+.form-button-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+
+	width: 100%;
+}
+
+/* --- FORMULÄR */
+
+/* SNYGGARE BILDVÄLJARE */
+
+.styled-img-selector {
+	position: relative;
+	display: grid;
+	place-items: center;
+	aspect-ratio: 1/1;
+	width: 50%;
+	margin-bottom: 1rem;
+	border-radius: 50%;
+	background-color: var(--surface-grey-50);
+
+	background-size: cover;
+	background-position: center;
+}
+
+.styled-img-selector:hover {
+	opacity: 85%;
+}
+
+.styled-img-selector input[type='file'] {
+	position: absolute;
+	color: transparent;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.styled-img-selector ::file-selector-button {
+	display: block;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.styled-img-selector svg {
+	color: var(--layer-grey-500);
+	aspect-ratio: 1/1;
+	width: 4rem;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.styled-img-selector-selected svg {
+	opacity: 0%;
+	transition: opacity 100ms ease-in-out;
+}
+
+.styled-img-selector-selected:hover {
+	opacity: 100%;
+}
+
+.styled-img-selector-selected:hover svg {
+	color: #909090;
+	opacity: 100%;
+	/* Syns bättre på olika typer av bakgrunder då den reagerar baserat på dem */
+	mix-blend-mode: difference;
+}
+
+/* PROFILBILDSVÄLJARE */
+
+.profile-pic-selector {
+	aspect-ratio: 1/1;
+	width: 50%;
+	border-radius: 50%;
+}
+
+/* --- */
+
+.profile-pic {
+	width: 2.5rem;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* OMSLAGSVÄLJARE */
+
+.post-cover-selector {
+	aspect-ratio: 16/9;
+	width: 100%;
+	border-radius: 1.5rem;
+}
+
+/* --- */
+
+/* INLÄGGSSKAPARE */
+
+.post-form {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	min-height: 100%;
+}
+
+.post-input-container {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.post-title-container,
+.post-content-container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.text-area-util {
+	width: 100%;
+	font-family: inherit;
+	color: var(--primary-black);
+	resize: none;
+	border: none;
+}
+
+.text-area-util:focus-visible {
+	outline: none;
+}
+
+.post-title-input {
+	height: 2em;
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1.31em;
+}
+
+.post-title-input::placeholder {
+	color: var(--layer-grey-500);
+}
+
+/* INLÄGG TEXT-REDIGERARE */
+
+.post-content,
+.post-content-input {
+	width: 100%;
+	min-height: 8rem;
+	font-size: var(--para-text-size);
+}
+
+.post-content-input::placeholder {
+	color: var(--layer-grey-500);
+}
+/* --- */
+
+.bottom-screen-btn-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vw;
+	padding: 0rem 2rem;
+	position: fixed;
+	left: 0;
+	bottom: 2rem;
+	pointer-events: none;
+}
+
+.bottom-screen-btn-bar .primary-btn,
+.bottom-screen-btn-bar .secondary-btn {
+	width: max-content;
+	pointer-events: all;
+}
+
+/* --- /INLÄGGSSKAPARE */
+
+/* INLÄGG */
+
+.post-main {
+	display: flex;
+	flex-direction: column;
+	max-width: 900px;
+	height: max-content;
+	padding: 2rem 0;
+}
+
+.post-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 2rem;
+}
+
+.post-cover {
+	aspect-ratio: 16/9;
+	width: 100%;
+	border-radius: 1.5rem;
+	object-fit: cover;
+}
+
+.post-cover-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.post-cover-container .styled-img-selector {
+	margin-bottom: 0;
+}
+
+.post-cover-text-input,
+.image-desc-text {
+	font-size: 0.875rem;
+	text-align: center;
+}
+
+.post-cover-text-input {
+	width: 100%;
+	height: 1.25em;
+	border: none;
+}
+
+.post-cover-text-input::placeholder {
+	color: var(--layer-grey-500);
+	text-align: center;
+}
+
+.post-cover-text-input:focus-visible {
+	outline: none;
+}
+
+.post-heading-container {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.post-heading-container span {
+	display: inline-block;
+	width: max-content;
+	color: var(--layer-grey-500);
+}
+
+.post-title {
+	margin: 0;
+}
+
+.post-info-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	width: 100%;
+	padding-block: 2rem;
+	border-top: 2px solid var(--surface-grey-50);
+}
+
+#post-reactions {
+	display: flex;
+	gap: 1rem;
+}
+
+.post-info-container .sm-user-card-container :last-child {
+	margin-right: 0.5rem;
+}
+
+/* UTIL */
+
+.hidden-label {
+	/* Göm Label för seende, men 
+	går fortfarande läsa med skärmläsare.
+	Ta också bort från "flödet så den slutar påverka
+	andra element"*/
+	visibility: hidden;
+	position: absolute;
+}
+
+/* Fixa konstigt position absolute fel på framsidan bl.a. */
+.a-tag-rel-fix {
+	display: contents;
+	position: relative;
+}
+
+.d-none {
+	display: none;
+}
+
+.pos-rel {
+	position: relative;
+}
+
+/* --- UTIL */
+
+@media only screen and (max-width: 1024px) {
+	header .main-nav ul {
+		flex-direction: column;
+		align-items: flex-end;
+	}
+	header .main-nav ul div:not(.sm-user-card-container) {
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 0;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.our-authors-section .md-user-card-container {
+		max-width: 100%;
+	}
+}
