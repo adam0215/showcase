@@ -175,7 +175,7 @@ footer div:last-of-type {
 	align-items: center;
 	width: 50%;
 	height: 100%;
-	min-height: 100vh; /* KOM TILLBAKA HIT ADAM, DETTA KANSKE INTE ÄR OPTIMALT */
+	min-height: 100vh;
 	border-radius: 1.5rem;
 }
 
